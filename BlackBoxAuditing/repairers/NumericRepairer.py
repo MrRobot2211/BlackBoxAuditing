@@ -25,6 +25,7 @@ class Repairer(AbstractRepairer):
       category_vals = [data_to_repair[j][self.feature_to_repair] for j in index_bin]
       category_medians[bin_name] = get_median(category_vals, self.kdd)
 
+    #@TODO make rcategory_median and index_bin stateful
     repaired_data = self.categoric_repairer.repair(binned_data)
 
     # Replace the "feature_to_repair" column with the median numeric value.
